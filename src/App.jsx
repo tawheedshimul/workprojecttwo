@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { BsCheck } from "react-icons/bs";
 import './App.css';
+import ProgressBar from './Accord';
 
 function App() {
   const [accordOne, setAccordOne] = useState(true);
@@ -82,7 +83,7 @@ function App() {
 
 
   return (
-    <div className="flex container bg-white p-6 mt-10 m-auto  shadow-md">
+    <div className="flex  bg-white p-6 mt-10 m-auto  shadow-md">
       <div className="space-y-6 border-l  border-solid">
 
         {/* 1st div */}
@@ -96,15 +97,22 @@ function App() {
             <div className={`overflow-hidden h-auto max-h-0 items-center opacity-0 transition-all  duration-500 ${accordOne && 'max-h-screen opacity-100'}`}>
 
 
-              <form class=" bg-[#EEEEEE] py-8 px-3 rounded-md">
-                <select id="countries" className=" border-b border-black w-full  focus:border-3 focus:border-blue-500 focus:border-b-2 outline-none ">
-                  <option selected class=""></option>
-                  <option value="US" class="">United States</option>
-                  <option value="CA" class="">Canada</option>
-                  <option value="FR" class="">France</option>
-                  <option value="DE" class="">Germany</option>
-                </select>
+              <form class="bg-[#EEEEEE] py-8 px-3 rounded-md">
+                <div class="select-wrapper">
+                  <select id="countries" class="border-b border-[#00000061] hover:border-black w-full focus:border-3 focus:focus-line focus:border-b-2 outline-none">
+                    <option selected class=""></option>
+                    <option value="US" class="">Heating - New</option>
+                    <option value="CA" class=""><p>Heating - Old</p></option>
+                    <option value="FR" class="">UFH Full</option>
+                    <option value="DE" class="">UFH</option>
+                  </select>
+                  <div class="focus-line"></div>
+                </div>
               </form>
+
+              {/* <input type="text" id="animatedInput" placeholder="Type something..." />
+<span class="focus-line"></span> */}
+
 
 
               <button className='continue-btn mt-12' onClick={handleAccordTwo}>CONTINUE</button>
@@ -120,7 +128,11 @@ function App() {
           <div className={`ml-6 ${tbg ? "animate-slide-down" : ""} `}>
             <h4 className="tracking-wide text-[#00000061]">System temperature</h4>
             <div className={`overflow-hidden h-auto max-h-0 items-center opacity-0 transition-all duration-500 ${accordTwo && 'max-h-screen opacity-100'}`}>
-              <p className={`mt-2 max-w-screen-sm text-sm text-gray-500`}>Aliquam tincidunt malesuada tortor vitae iaculis. In eu turpis iaculis, feugiat risus quis, aliquet urna. Quisque fringilla mollis risus, eu pulvinar dolor.</p>
+              
+
+            <ProgressBar />
+
+
               <button className='continue-btn' onClick={handleAccordThree}>CONTINUE</button>
               <button onClick={handleAccordOne}>BACK</button>
             </div>
@@ -163,77 +175,13 @@ function App() {
           <div className="ml-6">
             <h4 className="font-bold text-emerald-900">Result</h4>
             <div className={`overflow-hidden h-auto max-h-0 items-center opacity-0 transition-all duration-500 ${accordResult && 'max-h-screen opacity-100'}`}>
-             
 
 
-{/* table   */}
-<div class="flex justify-between bg-gray-200 ">
-    <div class="">
-        <table class="table-auto">
-            <thead>
-                <tr>
-                    <th class="px-4 ">Left Side</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="border px-4 ">Operating System</td>
-                </tr>
-                <tr>
-                    <td class="border px-4 ">Processor</td>
-                </tr>
-                <tr>
-                    <td class="border px-4 ">RAM</td>
-                </tr>
-                <tr>
-                    <td class="border px-4 ">Storage</td>
-                </tr>
-                <tr>
-                    <td class="border px-4 ">Graphics Card</td>
-                </tr>
-                <tr>
-                    <td class="border px-4 ">Display</td>
-                </tr>
-               
-            </tbody>
-        </table>
-    </div>
-    <div class="">
-        <table class="table-auto">
-            <thead>
-                <tr>
-                    <th class="px-4 ">Right Side</th>
-                </tr>
-            </thead>
-            <tbody>
-                
-         
-                <tr>
-                    <td class="border px-4 ">256 GB SSD</td>
-                </tr>
-                <tr>
-                    <td class="border px-4 ">NVIDIA GeForce GTX 1050</td>
-                </tr>
-                <tr>
-                    <td class="border px-4 ">15.6" Full HD (1920x1080)</td>
-                </tr>
-                <tr>
-                    <td class="border px-4 ">Broadband Internet</td>
-                </tr>
-                <tr>
-                    <td class="border px-4 ">Keyboard, Mouse</td>
-                </tr>
-                <tr>
-                    <td class="border px-4 ">USB 3.0, HDMI</td>
-                </tr>
-                <tr>
-                    <td class="border px-4 ">Microsoft Office, Adobe Creative Suite</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</div>
-{/* table  */}
+
+              {/* table   */}
+              
+
+              {/* table  */}
 
 
 

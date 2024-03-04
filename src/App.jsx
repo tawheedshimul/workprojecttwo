@@ -83,7 +83,7 @@ function App() {
 
 
   return (
-    <div className="flex  bg-white p-6 mt-10 m-auto  shadow-md">
+    <div className="flex container  bg-white p-6 mt-10 m-auto  shadow-md">
       <div className="space-y-6 border-l  border-solid">
 
         {/* 1st div */}

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { BsCheck } from "react-icons/bs";
 import './App.css';
 import ProgressBar from './Accord';
+import CustomizedSlider from './p';
 
 function App() {
   const [accordOne, setAccordOne] = useState(true);
@@ -135,13 +136,17 @@ function App() {
             <span className="text-white text-sm">{bgt ? <BsCheck className='text-xl' /> : '2'}</span>
           </div>
           <div className={`ml-6 ${tbg ? "animate-slide-down" : ""} `}>
-            <h4 className="tracking-wide text-[#00000061]">System temperature</h4>
+            <h4 className={`tracking-wide ${accordOne ? 'text-[#00000061]' : 'text-black'}`}>System temperature</h4>
+
             <div className={`overflow-hidden h-auto max-h-0 items-center opacity-0 transition-all duration-500 ${accordTwo && 'max-h-screen opacity-100'}`}>
 
-              <ProgressBar />
+              {/* <ProgressBar /> */}
+              <CustomizedSlider />
 
-              <button className='continue-btn' onClick={handleAccordThree}>CONTINUE</button>
-              <button onClick={handleAccordOne}>BACK</button>
+              <div className='mt-12'>
+                <button className='continue-btn' onClick={handleAccordThree}>CONTINUE</button>
+                <button onClick={handleAccordOne}>BACK</button>
+              </div>
             </div>
           </div>
         </div>

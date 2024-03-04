@@ -8,13 +8,15 @@ function ProgressBar() {
   };
 
   return (
-    <div className="bg-gray-200 flex justify-center items-center h-64">
-      <div className="relative w-96">
-      <div className="absolute border-none bg-[#0B453C] top-[-45px] pin rotate-45 transform -translate-x-1/2 -translate-y-1/2  flex justify-center items-center" style={{ left: `calc(${value}%/1.0335 + 6px )` }}>
-  <span className="text-white -rotate-45 text-[12px]">{value}</span>
-</div>
+    <div className="bg-gray-200 flex justify-center items-center h-36">
+      <div className="relative w-3/4 px-2">
+        {/* pin div start */}
+        <div className="absolute border-none bg-[#0B453C] top-[-45px] pin rotate-45 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center" style={{ left: `calc(${value}%/1.031 + 14px )` }}>
+          {/* pin div end  */}
+          <span className="text-white -rotate-45 text-[12px]">{value}</span>
+        </div>
 
-        
+
         <div className="track">
           <input
             type="range"
@@ -59,14 +61,27 @@ function ProgressBar() {
           position: relative;
           z-index: 2;
           box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+          transition: background-color 0.3s ease; /* Add transition effect */
         }
 
-        .slider:hover::-webkit-slider-thumb { /* Change background color on hover */
-         
+        .slider:hover::-webkit-slider-thumb {
+          background: #125c5184; /* Change background color on hover */
         }
 
-        
-        
+        .slider:active::-webkit-slider-thumb {
+          animation: ripple 0.4s ease; /* Add ripple animation on click */
+        }
+
+        @keyframes ripple {
+          0% {
+            transform: scale(1);
+            opacity: 1;
+          }
+          100% {
+            transform: scale(2);
+            opacity: 0;
+          }
+        }
       `}</style>
     </div>
   );

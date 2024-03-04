@@ -10,6 +10,14 @@ function App() {
   const [accordFour, setAccordFour] = useState(false);
   const [accordResult, setAccordResult] = useState(false);
 
+  const [fbg, setFbg] = useState(false);
+  const [gbg, setgb] = useState(false);
+  const [bg, setBg] = useState(true);
+  const [bgt, setBgt] = useState(false);
+  const [tbg, settbg] = useState(false);
+  const [hbg, sethbg] = useState(false);
+  const [ibg, setibg] = useState(false);
+
 
 
   const handleAccordOne = () => {
@@ -17,11 +25,14 @@ function App() {
     setAccordTwo(false);
     setAccordResult(false);
     setAccordThree(false);
-    setAccordFour(false)
-
+    setAccordFour(false);
     setBgt(false);
     setBg(true);
     settbg(false);
+    setgb(false);
+    setFbg(false);
+    sethbg(false);
+    setibg(false);
   };
 
   const handleAccordTwo = () => {
@@ -29,14 +40,14 @@ function App() {
     setAccordTwo(true);
     setAccordResult(false);
     setAccordThree(false);
-    setAccordFour(false)
-
-
+    setAccordFour(false);
     setBg(true);
     setBgt(false);
     settbg(true);
-
-
+    setgb(false);
+    setFbg(false);
+    sethbg(false);
+    setibg(false);
   };
 
 
@@ -46,16 +57,17 @@ function App() {
     setAccordResult(false);
     setAccordThree(true);
     setAccordFour(false);
-
     setBg(true);
     setBgt(true);
     settbg(true);
-
-
+    setgb(true);
+    setFbg(false);
+    sethbg(false);
+    setibg(false);
   }
 
 
-  const [fbg, setFbg] = useState(false);
+
 
 
   const handleAccordFour = () => {
@@ -65,6 +77,8 @@ function App() {
     setAccordThree(false);
     setAccordFour(true);
     setFbg(true);
+    sethbg(false);
+    setibg(true);
 
 
   }
@@ -75,29 +89,26 @@ function App() {
     setAccordThree(false);
     setAccordFour(false);
     setAccordResult(true);
+    sethbg(true);
   };
 
-  const [bg, setBg] = useState(true);
-  const [bgt, setBgt] = useState(false);
-  const [tbg, settbg] = useState(false);
+
 
 
   return (
-    <div className="flex container  bg-white p-6 mt-10 m-auto  shadow-md">
-      <div className="space-y-6 border-l  border-solid">
+    <div className="flex rounded  bg-white px-9 py-6 m-4  main-shadow">
+      <div className="space-y-6 w-full border-l  border-solid">
 
         {/* 1st div */}
-        <div className="relative">
-          <div className={`${bg ? "bg-emerald-900" : "bg-gray-400"} absolute -top-0.5 z-10 -ml-3.5 w-7 h-7 rounded-full bg-emerald-900  border-2  border-white flex items-center justify-center`}>
-            <span className="text-white text-xl font-bold">{accordOne ? '1' : <BsCheck />}</span>
-
+        <div className="relative pb-6">
+          <div className={`${bg ? "bg-emerald-900" : "bg-gray-400"} absolute -top-2  z-10 -ml-[20px] w-10 h-10 rounded-full bg-emerald-900  border-8  border-white flex items-center justify-center`}>
+            <span className="text-white text-sm font-bold">{accordOne ? '1' : <BsCheck className='text-xl' />}</span>
           </div>
           <div className="ml-6">
             <h4 className="font-bold text-emerald-900">Frontend Development.</h4>
             <div className={`overflow-hidden h-auto max-h-0 items-center opacity-0 transition-all  duration-500 ${accordOne && 'max-h-screen opacity-100'}`}>
 
-
-              <form class="bg-[#EEEEEE] py-8 px-3 rounded-md">
+              <form class="bg-[#EEEEEE] py-8 px-3 rounded-md ">
                 <div class="select-wrapper">
                   <select id="countries" class="border-b border-[#00000061] hover:border-black w-full focus:border-3 focus:focus-line focus:border-b-2 outline-none">
                     <option selected class=""></option>
@@ -113,25 +124,21 @@ function App() {
               {/* <input type="text" id="animatedInput" placeholder="Type something..." />
 <span class="focus-line"></span> */}
 
-
-
               <button className='continue-btn mt-12' onClick={handleAccordTwo}>CONTINUE</button>
             </div>
           </div>
         </div>
 
         {/* 2nd div */}
-        <div className="relative">
-          <div className={`${tbg ? "bg-emerald-900" : "bg-gray-400"} absolute -top-0.5 z-10 -ml-3.5 w-7 h-7  rounded-full border-2  border-white flex items-center justify-center`}>
-            <span className="text-white text-xl font-bold">{bgt ? <BsCheck /> : '2'}</span>
+        <div className="relative pb-6">
+          <div className={`${tbg ? "bg-emerald-900" : "bg-gray-400"} absolute -top-2 z-10 -ml-[20px] w-10 h-10 rounded-full bg-emerald-900  border-8 border-white flex items-center justify-center`}>
+            <span className="text-white text-sm">{bgt ? <BsCheck className='text-xl' /> : '2'}</span>
           </div>
           <div className={`ml-6 ${tbg ? "animate-slide-down" : ""} `}>
             <h4 className="tracking-wide text-[#00000061]">System temperature</h4>
             <div className={`overflow-hidden h-auto max-h-0 items-center opacity-0 transition-all duration-500 ${accordTwo && 'max-h-screen opacity-100'}`}>
-              
 
-            <ProgressBar />
-
+              <ProgressBar />
 
               <button className='continue-btn' onClick={handleAccordThree}>CONTINUE</button>
               <button onClick={handleAccordOne}>BACK</button>
@@ -139,8 +146,8 @@ function App() {
           </div>
         </div>
         {/* 3rd div */}
-        <div className="relative">
-          <div className={`${fbg ? "bg-emerald-900" : "bg-gray-400"} absolute -top-0.5 z-10 -ml-3.5 w-7 h-7  rounded-full border-2  border-white flex items-center justify-center`}>
+        <div className="relative pb-6">
+          <div className={`${gbg ? "bg-emerald-900" : "bg-gray-400"} absolute -top-2 z-10 -ml-[20px] w-10 h-10 rounded-full bg-emerald-900  border-8  border-white flex items-center justify-center`}>
             <span className="text-white text-xl font-bold">{fbg ? <BsCheck /> : "3"}</span>
           </div>
           <div className="ml-6">
@@ -153,9 +160,9 @@ function App() {
           </div>
         </div>
         {/* 4th div */}
-        <div className="relative">
-          <div className={`${bgt ? "bg-emerald-900" : "bg-gray-400"} absolute -top-0.5 z-10 -ml-3.5 w-7 h-7  rounded-full border-2  border-white flex items-center justify-center`}>
-            <span className="text-white text-xl font-bold">{bgt ? <BsCheck /> : "4"}</span>
+        <div className="relative pb-6">
+          <div className={`${ibg ? "bg-emerald-900" : "bg-gray-400"} absolute -top-2 z-10 -ml-[20px] w-10 h-10 rounded-full bg-emerald-900  border-8  border-white flex items-center justify-center`}>
+            <span className="text-white text-xl font-bold">{hbg ? <BsCheck /> : "4"}</span>
           </div>
           <div className="ml-6">
             <h4 className="font-bold text-emerald-900">Graphic Design.</h4>
@@ -169,7 +176,7 @@ function App() {
 
         {/* 5th div */}
         <div className="relative">
-          <div className={`${accordResult ? "bg-emerald-900" : "bg-gray-400"} absolute -top-0.5 z-10 -ml-3.5 w-7 h-7  rounded-full  border-2  border-white flex items-center justify-center`}>
+          <div className={`${accordResult ? "bg-emerald-900" : "bg-gray-400"} absolute -top-2 z-10 -ml-[20px] w-10 h-10 rounded-full bg-emerald-900  border-8  border-white flex items-center justify-center`}>
             <span className="text-white text-xl font-bold">5</span>
           </div>
           <div className="ml-6">
@@ -179,7 +186,7 @@ function App() {
 
 
               {/* table   */}
-              
+
 
               {/* table  */}
 

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
 body {
   font-family: 'Montserrat', sans-serif;
 }
@@ -14,7 +16,7 @@ box-shadow: 0px 1px 2px 1px rgb(212, 208, 208);
   padding: 7px 17px;
   border-radius: 4px;
   font-size: 14px;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   
 }
 
@@ -86,4 +88,15 @@ box-shadow: 0px 1px 2px 1px rgb(212, 208, 208);
   position: relative;
   font-size: 18px;
 }
+
+
+/* .MuiOutlinedInput-notchedOutline {
+  border-color: #53af5b !important;
+}
+
+.MuiFilledInput-root {
+  border-bottom: 1px solid #53af5b !important;
+} */
+
+
 

@@ -3,6 +3,7 @@ import { BsCheck } from "react-icons/bs";
 import './App.css';
 import ProgressBar from './Accord';
 import CustomizedSlider from './p';
+import One from './One';
 
 function App() {
   const [accordOne, setAccordOne] = useState(true);
@@ -121,6 +122,7 @@ function App() {
                   <div class="focus-line"></div>
                 </div>
               </form>
+              <One/>
 
               {/* <input type="text" id="animatedInput" placeholder="Type something..." />
 <span class="focus-line"></span> */}
@@ -173,7 +175,7 @@ function App() {
             <h4 className="font-bold text-emerald-900">Graphic Design.</h4>
             <div className={`overflow-hidden h-auto max-h-0 items-center opacity-0 transition-all duration-300 ${accordFour && 'max-h-screen opacity-100'}`}>
               <p className={`mt-2 max-w-screen-sm text-sm text-gray-500`}>Aliquam tincidunt malesuada tortor vitae iaculis. In eu turpis iaculis, feugiat risus quis, aliquet urna. Quisque fringilla mollis risus, eu pulvinar dolor.</p>
-              <button className='continue-btn' onClick={handleAccordResult}>CONTINUE</button>
+              <button className='continue-btn' onClick={handleAccordResult}>CONFIGURE YOUR X-POT @</button>
               <button onClick={handleAccordThree}>BACK</button>
             </div>
           </div>
@@ -191,13 +193,43 @@ function App() {
 
 
               {/* table   */}
-
+              <div className='bg-[#EEEEEE] rounded p-1'>
+                <div>
+                  System requirement ts
+                </div>
+                <div className='bg-white  rounded-md'>
+                  <div className='flex items-center border-b p-3'>
+                    <div className='w-1/2'>
+                      Type
+                    </div>
+                    <div>
+                      Chiled - New
+                    </div>
+                  </div>
+                  <div className='flex items-center border-b p-3'>
+                    <div className='w-1/2'>
+                      Type
+                    </div>
+                    <div>
+                      Chiled - New
+                    </div>
+                  </div>
+                  <div className='flex items-center p-3'>
+                    <div className='w-1/2'>
+                      MInimum pipework Size
+                    </div>
+                    <div>
+                      1/2 "
+                    </div>
+                  </div>
+                </div>
+              </div>
 
               {/* table  */}
 
 
 
-              <button className='continue-btn' onClick={handleAccordOne}>Start Again</button>
+              <button className='continue-btn' onClick={handleAccordOne}>START AGAIN</button>
               <button onClick={handleAccordFour}>BACK</button>
             </div>
 

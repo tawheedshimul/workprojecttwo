@@ -79,7 +79,9 @@ box-shadow: 0px 1px 2px 1px rgb(212, 208, 208);
   width: calc(100%);
   left: 0;
   transform: translateX(0);
+  transition: transform 0.3s ease; /* Add transition for smoother animation */
 }
+
 
 /* Additional styling for the select element */
 #countries {
@@ -88,15 +90,5 @@ box-shadow: 0px 1px 2px 1px rgb(212, 208, 208);
   position: relative;
   font-size: 18px;
 }
-
-
-/* .MuiOutlinedInput-notchedOutline {
-  border-color: #53af5b !important;
-}
-
-.MuiFilledInput-root {
-  border-bottom: 1px solid #53af5b !important;
-} */
-
 
 

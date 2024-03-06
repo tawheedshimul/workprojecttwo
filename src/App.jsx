@@ -4,6 +4,8 @@ import './App.css';
 import ProgressBar from './Accord';
 import CustomizedSlider from './p';
 import One from './One';
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
 
 function App() {
   const [accordOne, setAccordOne] = useState(true);
@@ -107,7 +109,7 @@ function App() {
             <span className="text-white text-sm font-bold">{accordOne ? '1' : <BsCheck className='text-xl' />}</span>
           </div>
           <div className="ml-6">
-            <h4 className="font-bold text-emerald-900">Frontend Development.</h4>
+            <h4 className="tracking-wide">Frontend Development.</h4>
             <div className={`overflow-hidden h-auto max-h-0 items-center opacity-0 transition-all  duration-500 ${accordOne && 'max-h-screen opacity-100'}`}>
 
               <form class="bg-[#EEEEEE] py-8 px-3 rounded-md ">
@@ -122,12 +124,25 @@ function App() {
                   <div class="focus-line"></div>
                 </div>
               </form>
-              <One/>
 
-              {/* <input type="text" id="animatedInput" placeholder="Type something..." />
-<span class="focus-line"></span> */}
+              <div className='mt-12'>
+                <Stack spacing={2} direction="row">
+                  <Button
+                    variant="contained"
+                    sx={{
+                      backgroundColor: '#0B453C',
+                      color: 'white',
+                      '&:hover': {
+                        backgroundColor: '#0f5c50',
+                      },
+                    }}
+                    onClick={handleAccordTwo}
+                  >
+                    Continue
+                  </Button>
 
-              <button className='continue-btn mt-12' onClick={handleAccordTwo}>CONTINUE</button>
+                </Stack>
+              </div>
             </div>
           </div>
         </div>
@@ -138,7 +153,7 @@ function App() {
             <span className="text-white text-sm">{bgt ? <BsCheck className='text-xl' /> : '2'}</span>
           </div>
           <div className={`ml-6 ${tbg ? "animate-slide-down" : ""} `}>
-            <h4 className={`tracking-wide ${accordOne ? 'text-[#00000061]' : 'text-black'}`}>System temperature</h4>
+            <p className={`tracking-wide ${accordOne ? 'text-[#00000061]' : 'text-black'}`}>System temperature</p>
 
             <div className={`overflow-hidden h-auto max-h-0 items-center opacity-0 transition-all duration-500 ${accordTwo && 'max-h-screen opacity-100'}`}>
 
@@ -146,8 +161,24 @@ function App() {
               <CustomizedSlider />
 
               <div className='mt-12'>
-                <button className='continue-btn' onClick={handleAccordThree}>CONTINUE</button>
-                <button onClick={handleAccordOne}>BACK</button>
+                <Stack spacing={2} direction="row">
+                  <Button
+                    variant="contained"
+                    sx={{
+                      backgroundColor: '#0B453C',
+                      color: 'white',
+                      '&:hover': {
+                        backgroundColor: '#0f5c50',
+                      },
+                    }}
+                    onClick={handleAccordThree}
+                  >
+                    Continue
+                  </Button>
+                  <Button onClick={handleAccordOne} variant="text" style={{ color: 'black' }}>
+                    BACK
+                  </Button>
+                </Stack>
               </div>
             </div>
           </div>
@@ -155,28 +186,99 @@ function App() {
         {/* 3rd div */}
         <div className="relative pb-6">
           <div className={`${gbg ? "bg-emerald-900" : "bg-gray-400"} absolute -top-2 z-10 -ml-[20px] w-10 h-10 rounded-full bg-emerald-900  border-8  border-white flex items-center justify-center`}>
-            <span className="text-white text-xl font-bold">{fbg ? <BsCheck /> : "3"}</span>
+            <span className="text-white text-sm">{fbg ? <BsCheck className='text-xl' /> : "3"}</span>
           </div>
           <div className="ml-6">
-            <h4 className="tracking-wide">System volume</h4>
+          <p className={`tracking-wide ${bgt ? 'text-black' : 'text-[#00000061]'}`}>System volume</p>
             <div className={`overflow-hidden h-auto max-h-0 items-center opacity-0 transition-all duration-500 ${accordThree && 'max-h-screen opacity-100'}`}>
-              <p className={`mt-2 max-w-screen-sm text-sm text-gray-500`}>Aliquam tincidunt malesuada tortor vitae iaculis. In eu turpis iaculis, feugiat risus quis, aliquet urna. Quisque fringilla mollis risus, eu pulvinar dolor.</p>
-              <button className='continue-btn' onClick={handleAccordFour}>CONTINUE</button>
-              <button onClick={handleAccordTwo}>BACK</button>
+
+
+              <div className="bg-[#EEEEEE] py-8 px-3 rounded-md ">
+                <p className='text-[14px] text-[#00000099]'>Total System Volume</p>
+                <div id="" className=" relative flex items-center border-b border-[#00000061] hover:border-black focus:border-3 focus:focus-line focus:border-b-2">
+                  <input className=" outline-none bg-transparent  w-full" type="number" id="" />
+                  <span>gal</span>
+                </div>
+                <p className='font-semibold text-[14px] p-2'>If you don’t know the Total System Volume, use this quick ‘Rule of Thumb’ calculation based on the BTUH used in the system. Set the BTUH rating of your system below.</p>
+
+                <p className='text-[14px] text-[#00000099]'>System BTUH</p>
+                <div id="" className=" relative flex items-center border-b border-[#00000061] hover:border-black focus:border-3 focus:focus-line focus:border-b-2">
+                  <input className=" outline-none bg-transparent  w-full" type="number" id="" />
+                  <span>BTUH</span>
+                </div>
+              </div>
+
+              <div className='mt-12'>
+                <Stack spacing={2} direction="row">
+                  <Button
+                    variant="contained"
+                    sx={{
+                      backgroundColor: '#0B453C',
+                      color: 'white',
+                      '&:hover': {
+                        backgroundColor: '#0f5c50',
+                      },
+                    }}
+                    onClick={handleAccordFour}
+                  >
+                    Continue
+                  </Button>
+                  <Button onClick={handleAccordTwo} variant="text" style={{ color: 'black' }}>
+                    BACK
+                  </Button>
+                </Stack>
+              </div>
+
+
+
+
+
             </div>
           </div>
         </div>
         {/* 4th div */}
         <div className="relative pb-6">
           <div className={`${ibg ? "bg-emerald-900" : "bg-gray-400"} absolute -top-2 z-10 -ml-[20px] w-10 h-10 rounded-full bg-emerald-900  border-8  border-white flex items-center justify-center`}>
-            <span className="text-white text-xl font-bold">{hbg ? <BsCheck /> : "4"}</span>
+            <span className="text-white text-sm">{hbg ? <BsCheck className='text-xl' /> : "4"}</span>
           </div>
           <div className="ml-6">
-            <h4 className="font-bold text-emerald-900">Graphic Design.</h4>
-            <div className={`overflow-hidden h-auto max-h-0 items-center opacity-0 transition-all duration-300 ${accordFour && 'max-h-screen opacity-100'}`}>
-              <p className={`mt-2 max-w-screen-sm text-sm text-gray-500`}>Aliquam tincidunt malesuada tortor vitae iaculis. In eu turpis iaculis, feugiat risus quis, aliquet urna. Quisque fringilla mollis risus, eu pulvinar dolor.</p>
-              <button className='continue-btn' onClick={handleAccordResult}>CONFIGURE YOUR X-POT @</button>
-              <button onClick={handleAccordThree}>BACK</button>
+          <p className={`tracking-wide ${fbg ? 'text-black' : 'text-[#00000061]'}`}>System pressure</p>
+            <div className={`overflow-hidden h-auto max-h-0 items-center opacity-0 transition-all duration-500 ${accordFour && 'max-h-screen opacity-100'}`}>
+
+
+              <div className="bg-[#EEEEEE] py-8 px-3 rounded-md ">
+                <p className='text-[14px] text-[#00000099]'>Maximum System Pressure</p>
+                <div id="" className=" relative flex items-center border-b border-[#00000061] hover:border-black focus:border-3  focus:border-b-2">
+                  <input className=" outline-none bg-transparent  w-full" type="number" id="" />
+                  <span>PSI</span>
+                </div>
+                <div className='flex items-center -ms-2.5 mt-3'>
+                  <One />
+                  <span className='text-[16px] text-[#00000099]'>Prefabricated Unit Required</span>
+                </div>
+              </div>
+
+              <div className='mt-12'>
+                <Stack spacing={2} direction="row">
+                  <Button
+                    variant="contained"
+                    sx={{
+                      backgroundColor: '#0B453C',
+                      color: 'white',
+                      '&:hover': {
+                        backgroundColor: '#0f5c50',
+                      },
+                    }}
+                    onClick={handleAccordResult}
+                  >
+                    CONFIGURE YOUR X-POT
+                  </Button>
+                  <Button onClick={handleAccordThree} variant="text" style={{ color: 'black' }}>
+                    BACK
+                  </Button>
+                </Stack>
+              </div>
+
             </div>
           </div>
         </div>
@@ -184,19 +286,19 @@ function App() {
         {/* 5th div */}
         <div className="relative">
           <div className={`${accordResult ? "bg-emerald-900" : "bg-gray-400"} absolute -top-2 z-10 -ml-[20px] w-10 h-10 rounded-full bg-emerald-900  border-8  border-white flex items-center justify-center`}>
-            <span className="text-white text-xl font-bold">5</span>
+            <span className="text-white text-sm">5</span>
           </div>
           <div className="ml-6">
-            <h4 className="font-bold text-emerald-900">Result</h4>
+          <p className={`tracking-wide ${hbg ? 'text-black' : 'text-[#00000061]'}`}>Results</p>
             <div className={`overflow-hidden h-auto max-h-0 items-center opacity-0 transition-all duration-500 ${accordResult && 'max-h-screen opacity-100'}`}>
 
 
 
               {/* table   */}
               <div className='bg-[#EEEEEE] rounded p-1'>
-                <div>
+                <p className='text-[20px] p-4 text-[#000000DE]'> 
                   System requirement ts
-                </div>
+                </p>
                 <div className='bg-white  rounded-md'>
                   <div className='flex items-center border-b p-3'>
                     <div className='w-1/2'>
@@ -226,11 +328,26 @@ function App() {
               </div>
 
               {/* table  */}
-
-
-
-              <button className='continue-btn' onClick={handleAccordOne}>START AGAIN</button>
-              <button onClick={handleAccordFour}>BACK</button>
+              <div className='mt-12'>
+                <Stack spacing={2} direction="row">
+                  <Button
+                    variant="contained"
+                    sx={{
+                      backgroundColor: '#0B453C',
+                      color: 'white',
+                      '&:hover': {
+                        backgroundColor: '#0f5c50',
+                      },
+                    }}
+                    onClick={handleAccordOne}
+                  >
+                    start again
+                  </Button>
+                  <Button onClick={handleAccordFour} variant="text" style={{ color: 'black' }}>
+                    BACK
+                  </Button>
+                </Stack>
+              </div>
             </div>
 
           </div>

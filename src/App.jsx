@@ -6,6 +6,7 @@ import CustomizedSlider from './p';
 import One from './One';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
+import Boxfour from './BoxFour';
 
 function App() {
   const [accordOne, setAccordOne] = useState(true);
@@ -110,7 +111,7 @@ function App() {
           </div>
           <div className="ml-6">
             <h4 className="tracking-wide">Frontend Development.</h4>
-            <div className={`overflow-hidden h-auto max-h-0 items-center opacity-0 transition-all  duration-500 ${accordOne && 'max-h-screen opacity-100'}`}>
+            <div className={`overflow-hidden h-auto max-h-0 items-center transition-all duration-500 ${accordOne ? 'max-h-screen' : ''}`}>
 
               <form class="bg-[#EEEEEE] py-8 px-3 rounded-md ">
                 <div class="select-wrapper">
@@ -155,7 +156,9 @@ function App() {
           <div className={`ml-6 ${tbg ? "animate-slide-down" : ""} `}>
             <p className={`tracking-wide ${accordOne ? 'text-[#00000061]' : 'text-black'}`}>System temperature</p>
 
-            <div className={`overflow-hidden h-auto max-h-0 items-center opacity-0 transition-all duration-500 ${accordTwo && 'max-h-screen opacity-100'}`}>
+            <div className={`overflow-hidden h-auto items-center transition-all duration-500 ${accordTwo ? 'max-h-screen' : 'max-h-0'}`}>
+
+
 
               {/* <ProgressBar /> */}
               <CustomizedSlider />
@@ -189,8 +192,8 @@ function App() {
             <span className="text-white text-sm">{fbg ? <BsCheck className='text-xl' /> : "3"}</span>
           </div>
           <div className="ml-6">
-          <p className={`tracking-wide ${bgt ? 'text-black' : 'text-[#00000061]'}`}>System volume</p>
-            <div className={`overflow-hidden h-auto max-h-0 items-center opacity-0 transition-all duration-500 ${accordThree && 'max-h-screen opacity-100'}`}>
+            <p className={`tracking-wide ${bgt ? 'text-black' : 'text-[#00000061]'}`}>System volume</p>
+            <div className={`overflow-hidden h-auto items-center transition-all duration-500 ${accordThree ? 'max-h-screen' : 'max-h-0'}`}>
 
 
               <div className="bg-[#EEEEEE] py-8 px-3 rounded-md ">
@@ -242,12 +245,13 @@ function App() {
             <span className="text-white text-sm">{hbg ? <BsCheck className='text-xl' /> : "4"}</span>
           </div>
           <div className="ml-6">
-          <p className={`tracking-wide ${fbg ? 'text-black' : 'text-[#00000061]'}`}>System pressure</p>
-            <div className={`overflow-hidden h-auto max-h-0 items-center opacity-0 transition-all duration-500 ${accordFour && 'max-h-screen opacity-100'}`}>
+            <p className={`tracking-wide ${fbg ? 'text-black' : 'text-[#00000061]'}`}>System pressure</p>
+            <div className={`overflow-hidden h-auto items-center transition-all duration-500 ${accordFour ? 'max-h-screen' : 'max-h-0'}`}>
 
 
               <div className="bg-[#EEEEEE] py-8 px-3 rounded-md ">
                 <p className='text-[14px] text-[#00000099]'>Maximum System Pressure</p>
+                {/* <Boxfour/> */}
                 <div id="" className=" relative flex items-center border-b border-[#00000061] hover:border-black focus:border-3  focus:border-b-2">
                   <input className=" outline-none bg-transparent  w-full" type="number" id="" />
                   <span>PSI</span>
@@ -289,14 +293,14 @@ function App() {
             <span className="text-white text-sm">5</span>
           </div>
           <div className="ml-6">
-          <p className={`tracking-wide ${hbg ? 'text-black' : 'text-[#00000061]'}`}>Results</p>
-            <div className={`overflow-hidden h-auto max-h-0 items-center opacity-0 transition-all duration-500 ${accordResult && 'max-h-screen opacity-100'}`}>
+            <p className={`tracking-wide ${hbg ? 'text-black' : 'text-[#00000061]'}`}>Results</p>
+            <div className={`overflow-hidden h-auto items-center transition-all duration-500 ${accordResult ? 'max-h-screen' : 'max-h-0'}`}>
 
 
 
               {/* table   */}
               <div className='bg-[#EEEEEE] rounded p-1'>
-                <p className='text-[20px] p-4 text-[#000000DE]'> 
+                <p className='text-[20px] p-4 text-[#000000DE]'>
                   System requirement ts
                 </p>
                 <div className='bg-white  rounded-md'>
